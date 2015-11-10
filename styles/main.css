@@ -1,0 +1,59 @@
+.button{
+	width: 75px;
+	height: 75px;
+	line-height: 75px; /* centers text in a div (must be one line only) */
+	margin-top: 10px;
+	text-align: center;
+	vertical-align: top;
+	display: inline-block;
+	border: 1px solid green;
+	border-radius: 5px;
+
+}
+
+	.button:hover{
+		color: red;
+	}
+
+.item-inv-empty{
+	width: 75px;
+	height: 75px;
+	border: 1px solid black;
+	display: inline-block;
+	margin-right: 5px;
+
+}
+
+.item-inv-active{
+	width: 90px;
+	height: 90px;
+	border: 1px solid black;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+#scene {
+	width: 1150px;
+	height: 550px;
+	margin-top: 5px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px dashed red;
+}
+
+#controls{
+	width: 800px;
+	height: 100px;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px dashed blue;
+
+}
+	#inventory{
+		width: 500px;
+		height: 100px;
+		border: 1px solid green;
+		display: inline-block;
+		border-radius: 5px;
+	}
