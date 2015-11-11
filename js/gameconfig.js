@@ -41,9 +41,16 @@ var config = {
 						counter--;
 					} else {
 						console.log('preceding item with index ' +precedingIndex+ ' exists.');
-						var item = $('<div class="item-inv-empty"></div>');
-						item.css('background-color', this.box[precedingIndex].color);
-						item.appendTo('#inventory');
+						
+						var item = this.box[precedingIndex];
+						item.div = $('<div class="item-inv-empty"></div>');
+						item.div.css('background-color', this.box[precedingIndex].color);
+						item.div.data('obj', item);
+						item.div.click(function(){
+							$(this).data('obj').clicked();
+
+						});
+						item.div.appendTo('#inventory');
 						counter--;
 					}						
 				}
@@ -64,9 +71,16 @@ var config = {
 						counter++;
 					} else {
 						console.log('Item in array with index ' +followingIndex+ ' exists');
-						var item = $('<div class="item-inv-empty"></div>');
-						item.css('background-color', this.box[followingIndex].color);
-						item.appendTo('#inventory');						
+						var item = this.box[followingIndex];
+						item.div = $('<div class="item-inv-empty"></div>');
+						item.div.css('background-color', this.box[followingIndex].color);
+						item.div.data('obj', item);
+						item.div.click(function(){
+							$(this).data('obj').clicked();
+
+						});
+
+						item.div.appendTo('#inventory');			
 						counter++;
 					}
 				} //end of FOR
@@ -74,7 +88,7 @@ var config = {
 			} else { //active item exists in array
 				console.log('Item with current activeItemIndex of ' +this.activeItemIndex+ ' exists in array');
 				
-				var counter = 2; //TO DO  -  DEACTIVATE ALL THESE 2 ITEMS!
+				var counter = 2;
 				for (i=0; i<2; i++){
 					var precedingIndex = this.activeItemIndex-counter;
 					if (precedingIndex < 0){ //
@@ -84,16 +98,30 @@ var config = {
 						counter--;
 					} else {
 						console.log('preceding item with index ' +precedingIndex+ ' exists.');
-						var item = $('<div class="item-inv-empty"></div>');
-						item.css('background-color', this.box[precedingIndex].color);
-						item.appendTo('#inventory');
+
+						var item = this.box[precedingIndex];
+						item.div = $('<div class="item-inv-empty"></div>');
+						item.div.css('background-color', this.box[precedingIndex].color);
+						item.div.data('obj', item);
+						item.div.click(function(){
+							$(this).data('obj').clicked();
+
+						});
+
+						item.div.appendTo('#inventory');
 						counter--;
 					}						
 				}
 
-				var activeItem = $('<div class="item-inv-active"></div>'); //active item box is empty 
-				activeItem.css('background-color', this.box[this.activeItemIndex].color);
-				activeItem.appendTo('#inventory');
+				var activeItem = this.box[this.activeItemIndex];
+				activeItem.div = $('<div class="item-inv-active"></div>');  
+				activeItem.div.css('background-color', this.box[this.activeItemIndex].color);
+				activeItem.div.data('obj', activeItem);
+				activeItem.div.click(function(){
+							$(this).data('obj').clicked();
+				});
+
+				activeItem.div.appendTo('#inventory');
 				this.box[this.activeItemIndex].equipped = true;
 				$('#item-name').html(this.box[this.activeItemIndex].name);
 
@@ -107,9 +135,17 @@ var config = {
 						counter++;
 					} else {
 						console.log('following item with index ' +followingIndex+ ' exists' );
-						var item = $('<div class="item-inv-empty"></div>');
-						item.css('background-color', this.box[followingIndex].color);
-						item.appendTo('#inventory');
+						
+						var item = this.box[followingIndex];
+						item.div = $('<div class="item-inv-empty"></div>');
+						item.div.css('background-color', this.box[followingIndex].color);
+						item.div.data('obj', item);
+						item.div.click(function(){
+							$(this).data('obj').clicked();
+
+						});
+
+						item.div.appendTo('#inventory');
 						counter++;
 					}
 				} //end of FOR	

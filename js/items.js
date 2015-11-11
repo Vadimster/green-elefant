@@ -1,31 +1,50 @@
 
 var red = {
-	name: 'red box',
+	name: 'Red box',
 	color: 'red',
-	equipped: false
-
+	equipped: false,
+	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	clicked: function(){
+		dialog.itemInfo(this);
+	}
 };
 
 var green = {
-	name: 'green box',
+	name: 'Green box',
 	color: 'green',
-	equipped: false
+	equipped: false,
+	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	clicked: function(){
+		dialog.itemInfo(this);
+	}
 };
 
 var yellow = {
-	name: 'yellow box',
+	name: 'Yellow box',
 	color: 'yellow',
-	equipped: false
+	equipped: false,
+	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	clicked: function(){
+		dialog.itemInfo(this);
+	}	
 };
 
 var blue = {
-	name: 'blue box',
+	name: 'Blue box',
 	color: 'blue',
-	equipped: false
+	equipped: false,
+	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	clicked: function(){
+		dialog.itemInfo(this);
+	}	
 };
 
 var brown = {
-	name: 'brown box',
+	name: 'Brown box',
 	color: 'brown',
-	equipped: false
+	equipped: false,
+	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	clicked: function(){
+		dialog.itemInfo(this);
+	}
 };
