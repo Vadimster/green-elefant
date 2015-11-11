@@ -13,12 +13,18 @@ var config = {
 	},
 
 	inventory: {
-		box: [red, yellow, green, yellow],
+		box: [red, yellow, green, blue, brown],
 		activeItemIndex: 2, //array index of currently active item. Zero at game start
+
 
 		draw: function(){
 			console.log('config.inventory.draw() launched');
 			$('#inventory').empty();
+			$('#item-name').empty();
+			for (i = 0; i< this.box.length; i++){ //ensure all elements are set to inactive
+				this.box[i].equipped = false;
+			}	
+
 			console.log('Active item index is now: ' + this.activeItemIndex);
 
 			if (this.box[this.activeItemIndex] === undefined){
@@ -88,8 +94,8 @@ var config = {
 				var activeItem = $('<div class="item-inv-active"></div>'); //active item box is empty 
 				activeItem.css('background-color', this.box[this.activeItemIndex].color);
 				activeItem.appendTo('#inventory');
-				this.box[this.activeItemIndex].active = true;
-				console.log(this.box[this.activeItemIndex].name + ' is now active');
+				this.box[this.activeItemIndex].equipped = true;
+				$('#item-name').html(this.box[this.activeItemIndex].name);
 
 				var counter = 1; //TO DO  -  DEACTIVATE ALL THESE 2 ITEMS!
 				for(i=0; i < 2; i++){
@@ -106,7 +112,7 @@ var config = {
 						item.appendTo('#inventory');
 						counter++;
 					}
-				} //end of FOR
+				} //end of FOR	
 			} //end of IF
 		} //end of DRAW()
 	}
@@ -126,8 +132,9 @@ $(document).keydown(function(e) {
 });	
 
 
-
 $(document).ready(function(){
 	console.log('self invoke');
 	config.inventory.draw();
  });
+
+

@@ -10,7 +10,6 @@
 	border-radius: 5px;
 
 }
-
 	.button:hover{
 		color: red;
 	}
@@ -19,6 +18,7 @@
 	width: 75px;
 	height: 75px;
 	border: 1px solid black;
+	border-radius: 5px;
 	display: inline-block;
 	margin-right: 5px;
 
@@ -28,6 +28,7 @@
 	width: 90px;
 	height: 90px;
 	border: 1px solid black;
+	border-radius: 5px;
 	display: inline-block;
 	margin-right: 5px;
 }
@@ -42,18 +43,39 @@
 }
 
 #controls{
-	width: 800px;
-	height: 100px;
+	width: 600px;
+	/* height: 100px; */
 	margin-top: 10px;
 	margin-right: auto;
 	margin-left: auto;
 	border: 1px dashed blue;
 
 }
-	#inventory{
-		width: 500px;
-		height: 100px;
-		border: 1px solid green;
+
+
+	.inventory-wrapper{
+		width: 430px;
+		height: 150px;
+		border: 1px dotted green;
 		display: inline-block;
-		border-radius: 5px;
 	}
+
+
+		#inventory{
+			/* width: 425px; */
+			height: 100px;
+			margin-top: 10px;
+			border: 1px solid green;
+			/* display: inline-block; */
+			border-radius: 5px;
+		}
+
+		#item-name{
+			margin: auto;
+			padding-top: 5px;
+			text-align: center;
+			border: 1px dotted yellow;
+
+		}
+
+
