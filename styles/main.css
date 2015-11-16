@@ -1,3 +1,9 @@
+body{
+	min-width: 1205px;
+
+}
+
+
 
 .title{
 	color: black;
@@ -22,6 +28,7 @@
 	display: inline-block;
 	border: 1px solid green;
 	border-radius: 5px;
+	cursor: pointer;
 
 }
 	.button:hover{
@@ -37,7 +44,6 @@
 	margin-right: 5px;
 
 }
-
 	.item-inv-empty:last-child{
 		margin-right: 0px;
 
@@ -52,14 +58,47 @@
 	margin-right: 5px;
 }
 
-#scene {
-	width: 1150px;
-	height: 550px;
-	margin-top: 5px;
-	margin-right: auto;
-	margin-left: auto;
-	border: 1px dashed red;
+.header{
+		position: relative;
+		border: 1px dashed blue;
+		width: 1200px;
+		margin-right: auto;
+		margin-left: auto;
 }
+
+.left-flip{
+	width: 10px;
+	height: 20px;
+	background-color: gray;
+	position: absolute;
+	top: 240px;
+	left: 0px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.right-flip{
+	width: 10px;
+	height: 20px;
+	background-color: gray;
+	position: absolute;
+	top: 240px;
+	right: 0px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+
+	#scene {
+		position: relative;
+		width: 1150px;
+		height: 530px;
+		margin-right: auto;
+		margin-left: auto;
+		border: 1px dashed red;
+	}
+
+
 
 #controls{
 	width: 600px;
@@ -137,6 +176,24 @@
 
     }
 
+
+/* ------------------------------------------------ */
+
+#view-1-a{ /* his can be achieved by using class across all sublocation, e.g. .sublocation  */
+	display: none;
+	position: absolute;
+		width: 1150px;
+		height: 530px;
+	background-color: none;
+}
+
+#view-1-b{ /* his can be achieved by using class across all sublocation, e.g. .sublocation  */
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: none;
+}
 
 
 

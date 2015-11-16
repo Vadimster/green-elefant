@@ -16,7 +16,6 @@ var config = {
 		box: [red, yellow, green, blue, brown],
 		activeItemIndex: 2, //array index of currently active item. Zero at game start
 
-
 		draw: function(){
 			console.log('config.inventory.draw() launched');
 			$('#inventory').empty();
@@ -151,7 +150,55 @@ var config = {
 				} //end of FOR	
 			} //end of IF
 		} //end of DRAW()
+	},  // end of inventory
+
+	scene: {
+		currentRoom: null, //required for quests and item interaction
+		currentView: null, //required for quests and item interaction
+		curentIndex: null, //index of a view which has been drawn (currently on screen). This is needed to switch left/right between views of the room to denote a starting point
+
+		update: function(room, viewIndex){ // Passed by eventhandlers which are linked to divs in the init pahse of the game. which room to draw and which view of that room to draw. Ecah room contains array with views.
+			console.log('config.scene.update() launched');
+			this.roomName = room.name;
+			this.viewName = room.views[viewIndex].name;
+			this.currentIndex = viewIndex;
+			console.log('room: ' + this.roomName +'| view: ' +this.viewName+ ' | index of the view to draw/current index: ' +this.currentIndex);
+
+			$('#scene').empty();
+			$(room.views[viewIndex].domID).css('background-color', room.views[viewIndex].background);
+			$(room.views[viewIndex].domID).css('display', 'block');
+			$(room.views[viewIndex].domID).appendTo('#scene');
+			
+			// update relevant domID (currentRoom.views[viewIndex].domID) with a background image. Need to update at this stage to save game loading time
+
+		},
+
+
+		flip: function(direction){ //switch between views in a room
+			if (direction === 'right'){
+				console.log('config.scene.flip(right) launched');
+
+			} else {
+				console.log('config.scene.flip(left) launched');
+
+			}
+
+			
+
+			//if flip right, move right in the array (increase index), 
+			//if flip left,  move left in the arrau
+			//keep move indefinite,
+
+		},
+
+		drawButtons: function(){
+
+
+
+		}
+
 	}
+
 };
 
 
@@ -171,6 +218,7 @@ $(document).keydown(function(e) {
 $(document).ready(function(){
 	console.log('self invoke');
 	config.inventory.draw();
+	config.scene.update(room1, 0);
  });
 
 

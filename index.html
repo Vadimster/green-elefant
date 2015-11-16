@@ -11,7 +11,12 @@
 <!-- sounds -->
 
 <!-- interface -->
-	<section id="scene"></section>
+	<section class="header">
+		<div class="left-flip" onclick="config.scene.flip('left')"><</div>
+		<div class="right-flip" onclick="config.scene.flip('right')">></div>
+		<div id="scene"></div>
+	</section>
+	
 	<section id="controls">	
 		<div id="button-save" class="button" onclick="config.game.save()">Сохранить</div>
 		<div class="inventory-wrapper">
@@ -29,14 +34,16 @@
 	<div id="item-info-dialog-picture"></div>
 	<div id="item-info-dialog-title" class="title"><h1></h1></div>
 	<div id="item-info-dialog-text" class="text"><p></p></div>
+</div>
 
+<div id="view-1-a"></div>	 <!-- Description of the view --> 
+<div id="view-1-b"></div>	 <!-- Description of the view --> 
 
-</div>	
-	
 
 <!-- scripts -->
 	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="ui/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/locations.js"></script>
 	<script type="text/javascript" src="js/dialogs.js"></script>	
 	<script type="text/javascript" src="js/items.js"></script>
 	<script type="text/javascript" src="js/gameconfig.js"></script>
