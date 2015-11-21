@@ -8,7 +8,13 @@
 var view1a = { //start view on gaupvahta
 	name: 'Startovij view',
 	domID: '#view-1-a',
-	background: 'yellow' //background URL image to be loaded into the scene
+	background: 'img/locations/room1/b1.jpg', //background URL image to be loaded into the scene
+	draw: function(){
+		console.log('drawing startovij view');
+
+
+	}
+
 };
 
 
@@ -16,7 +22,13 @@ var view1a = { //start view on gaupvahta
 var view1b = {
 	name: 'gaupvahta door',
 	domID: '#view-1-b',
-	background: 'orange'
+	background: 'img/locations/room1/b2.jpg', //background URL image to be loaded into the scene
+	draw: function(){
+		console.log('drawing gaupvahta door');
+
+	}
+
+
 };
 
 

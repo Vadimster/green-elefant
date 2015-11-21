@@ -153,42 +153,52 @@ var config = {
 	},  // end of inventory
 
 	scene: {
-		currentRoom: null, //required for quests and item interaction
-		currentView: null, //required for quests and item interaction
-		curentIndex: null, //index of a view which has been drawn (currently on screen). This is needed to switch left/right between views of the room to denote a starting point
+		room: null, //requird to keep reference to current object, used in flip() 
+		roomName: null, //required for quests and item interaction
+		viewName: null, //required for quests and item interaction
+		currentIndex: null, //index of a view which has been drawn (currently on screen). This is needed to switch left/right between views of the room to denote a starting point
 
 		update: function(room, viewIndex){ // Passed by eventhandlers which are linked to divs in the init pahse of the game. which room to draw and which view of that room to draw. Ecah room contains array with views.
 			console.log('config.scene.update() launched');
+			this.room = room;
 			this.roomName = room.name;
 			this.viewName = room.views[viewIndex].name;
 			this.currentIndex = viewIndex;
 			console.log('room: ' + this.roomName +'| view: ' +this.viewName+ ' | index of the view to draw/current index: ' +this.currentIndex);
-
 			$('#scene').empty();
-			$(room.views[viewIndex].domID).css('background-color', room.views[viewIndex].background);
-			$(room.views[viewIndex].domID).css('display', 'block');
-			$(room.views[viewIndex].domID).appendTo('#scene');
-			
-			// update relevant domID (currentRoom.views[viewIndex].domID) with a background image. Need to update at this stage to save game loading time
+			var div = $("<div class='view' id="+this.room.views[this.currentIndex].domID+"></div>");
+			div.css('background-image', 'url('+room.views[this.currentIndex].background+')'); // SPINNER GOES HERE BEFORE IMAGE IS READY!!!
+			div.css('display', 'block');
+			div.appendTo('#scene');
+
+			this.room.views[this.currentIndex].draw(); //add quest elements to background
+
 
 		},
 
 
-		flip: function(direction){ //switch between views in a room
+		flip: function(direction){ //switch between views in current room
 			if (direction === 'right'){
 				console.log('config.scene.flip(right) launched');
+				this.currentIndex++;				
+				if (typeof(this.room.views[this.currentIndex])=='undefined') {
+					console.log('next item in array is undefined');
+					this.update(this.room, 0);
+				} else{
+					console.log('next item in array is defined');
+					this.update(this.room, this.currentIndex);
+				}
 
 			} else {
 				console.log('config.scene.flip(left) launched');
-
+				this.currentIndex--;				
+				if (typeof(this.room.views[this.currentIndex])=='undefined') {
+          			this.currentIndex = this.room.views.length - 1; 
+					this.update(this.room, this.currentIndex);
+				} else {
+					this.update(this.room, this.currentIndex);
+				}
 			}
-
-			
-
-			//if flip right, move right in the array (increase index), 
-			//if flip left,  move left in the arrau
-			//keep move indefinite,
-
 		},
 
 		drawButtons: function(){
