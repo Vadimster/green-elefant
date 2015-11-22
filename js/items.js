@@ -1,9 +1,10 @@
 
-var red = {
-	name: 'Red box',
-	color: 'red',
+var fork = {
+	name: 'вилка',
+	icon: 'img/inventory/icons/fork.png', //image to be used in inventory scroller
+	img: 'img/inventory/icons/fork.png', //image to be used within a description dialog
 	equipped: false,
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	description: 'Обыкновенная столовая вилка. Возможно, ты найдешь ей какое-то особенное применение?',
 	useOnElement: '#ID', //ID of an alavant (div) on which item can be used.
 
 	clicked: function(){
@@ -11,41 +12,12 @@ var red = {
 	}
 };
 
-var green = {
-	name: 'Green box',
-	color: 'green',
+var hand = {
+	name: 'рука',
+	icon: 'img/inventory/icons/hand.png', //image to be used in inventory scroller
+	img: 'img/inventory/icons/hand.png', //image to be used within a description dialog
 	equipped: false,
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-	clicked: function(){
-		dialog.itemInfo(this);
-	}
-};
-
-var yellow = {
-	name: 'Yellow box',
-	color: 'yellow',
-	equipped: false,
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-	clicked: function(){
-		dialog.itemInfo(this);
-	}	
-};
-
-var blue = {
-	name: 'Blue box',
-	color: 'blue',
-	equipped: false,
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-	clicked: function(){
-		dialog.itemInfo(this);
-	}	
-};
-
-var brown = {
-	name: 'Brown box',
-	color: 'brown',
-	equipped: false,
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+	description: 'В некоторых случаях рука может пригодиться. Только стены не малафить!',
 	clicked: function(){
 		dialog.itemInfo(this);
 	}

@@ -1,7 +1,7 @@
 
 //scene  =  div on main page which displays graphics within it
 //room = a room the player is currently in
-//view = part of the room the player currently views
+//view = part of the room the player currently views. All quests well be active here (appended to this view)
 
 
 
@@ -9,10 +9,8 @@ var view1a = { //start view on gaupvahta
 	name: 'Startovij view',
 	domID: '#view-1-a',
 	background: 'img/locations/room1/b1.jpg', //background URL image to be loaded into the scene
-	draw: function(){
-		console.log('drawing startovij view');
-
-
+	draw: function(){ 
+		console.log('drawing interactive elements on view: ' + this.name);
 	}
 
 };
@@ -24,7 +22,7 @@ var view1b = {
 	domID: '#view-1-b',
 	background: 'img/locations/room1/b2.jpg', //background URL image to be loaded into the scene
 	draw: function(){
-		console.log('drawing gaupvahta door');
+		console.log('drawing interactive elements on view: ' + this.name);
 
 	}
 

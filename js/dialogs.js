@@ -4,7 +4,7 @@ var dialog  = {
 	itemInfo: function(item){
 		console.log('dialog.itemInfo() launched. Item name is ' + item.name);
 	
-		$('#item-info-dialog-picture').css('background-color', item.color);
+		$('#item-info-dialog-picture').css('background-image', 'url('+item.img+')');
 		$('#item-info-dialog-title').html(item.name);
 		$('#item-info-dialog-text').html(item.description);
 

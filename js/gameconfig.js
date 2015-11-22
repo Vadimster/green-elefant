@@ -13,7 +13,7 @@ var config = {
 	},
 
 	inventory: {
-		box: [red, yellow, green, blue, brown],
+		box: [hand, fork],
 		activeItemIndex: 2, //array index of currently active item. Zero at game start
 
 		draw: function(){
@@ -43,7 +43,7 @@ var config = {
 						
 						var item = this.box[precedingIndex];
 						item.div = $('<div class="item-inv-empty"></div>');
-						item.div.css('background-color', this.box[precedingIndex].color);
+						item.div.css('background-image', 'url('+this.box[precedingIndex].icon+')');
 						item.div.data('obj', item);
 						item.div.click(function(){
 							$(this).data('obj').clicked();
@@ -72,7 +72,7 @@ var config = {
 						console.log('Item in array with index ' +followingIndex+ ' exists');
 						var item = this.box[followingIndex];
 						item.div = $('<div class="item-inv-empty"></div>');
-						item.div.css('background-color', this.box[followingIndex].color);
+						item.div.css('background-image', 'url('+this.box[followingIndex].icon+')');
 						item.div.data('obj', item);
 						item.div.click(function(){
 							$(this).data('obj').clicked();
@@ -100,7 +100,7 @@ var config = {
 
 						var item = this.box[precedingIndex];
 						item.div = $('<div class="item-inv-empty"></div>');
-						item.div.css('background-color', this.box[precedingIndex].color);
+						item.div.css('background-image', 'url('+this.box[precedingIndex].icon+')');
 						item.div.data('obj', item);
 						item.div.click(function(){
 							$(this).data('obj').clicked();
@@ -114,7 +114,7 @@ var config = {
 
 				var activeItem = this.box[this.activeItemIndex];
 				activeItem.div = $('<div class="item-inv-active"></div>');  
-				activeItem.div.css('background-color', this.box[this.activeItemIndex].color);
+				activeItem.div.css('background-image', 'url('+this.box[this.activeItemIndex].icon+')'); 
 				activeItem.div.data('obj', activeItem);
 				activeItem.div.click(function(){
 							$(this).data('obj').clicked();
@@ -137,7 +137,7 @@ var config = {
 						
 						var item = this.box[followingIndex];
 						item.div = $('<div class="item-inv-empty"></div>');
-						item.div.css('background-color', this.box[followingIndex].color);
+						item.div.css('background-image', 'url('+this.box[followingIndex].icon+')');
 						item.div.data('obj', item);
 						item.div.click(function(){
 							$(this).data('obj').clicked();
@@ -166,14 +166,27 @@ var config = {
 			this.currentIndex = viewIndex;
 			console.log('room: ' + this.roomName +'| view: ' +this.viewName+ ' | index of the view to draw/current index: ' +this.currentIndex);
 			$('#scene').empty();
-			var div = $("<div class='view' id="+this.room.views[this.currentIndex].domID+"></div>");
-			div.css('background-image', 'url('+room.views[this.currentIndex].background+')'); // SPINNER GOES HERE BEFORE IMAGE IS READY!!!
-			div.css('display', 'block');
+
+			var div = $("<div class='spinner' id="+this.room.views[this.currentIndex].domID+"></div>");
+			div.css('background-image', 'url(img/spinner.gif)');
 			div.appendTo('#scene');
+			var background = new Image();
+			background.src = room.views[this.currentIndex].background;
+			
+		
+			$(background).on('load', function(){
+				div.removeClass('spinner').addClass('view');
+				div.css('background-image', 'url('+background.src+')');
+			});
 
-			this.room.views[this.currentIndex].draw(); //add quest elements to background
+	/*
+			$(background).load(function(){
+				div.removeClass('spinner').addClass('view');
+				div.css('background-image', 'url('+background.src+')');
+			});
+*/
 
-
+			this.room.views[this.currentIndex].draw(); //add interactive elements to background
 		},
 
 
