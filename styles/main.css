@@ -3,6 +3,19 @@ body{
 
 }
 
+.questElement{ /* for testing, review later on */
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	border: 1px dotted red;
+}
+	.questElement:hover{
+		background-color: red;
+		opacity: 0.1;
+	}
+
+
+
 .spinner{
 	margin-top: 220px;
 	margin-left: auto;
@@ -52,11 +65,10 @@ body{
 	background-size: 100% 100%;
 	background-repeat: no-repeat;	
 	background-position: center;
-
+	cursor: pointer;
 }
 	.item-inv-empty:last-child{
 		margin-right: 0px;
-
 	}
 
 .item-inv-active{
@@ -71,6 +83,8 @@ body{
 	background-repeat: no-repeat;
 	background: rgba(255,0,0,0.1);
 	background-size: contain;
+	cursor: pointer;
+
 }
 
 .view{ /* styles background picture for all views */
@@ -171,7 +185,7 @@ body{
 }
 
 
-#item-info-dialog-bg{
+.dialog-bg{
 	position: relative;
 	background-image: url(../img/inventory/item-info-bg.png);
 	height: 410px;
@@ -182,7 +196,7 @@ body{
 
 }
 
-	#item-info-dialog-picture {
+	.dialog-picture {
 		width: 200px;
 		height: 200px;
 		background-size: 100% 100%;
@@ -199,7 +213,7 @@ body{
 		background-size: contain;
 	}
 
-	#item-info-dialog-title{
+	.dialog-title{
     	margin-right: auto;
     	margin-left: auto;
     	margin-top: 10px;
@@ -207,7 +221,7 @@ body{
     	text-align: center;
 	}
 
-	#item-info-dialog-text{
+	.dialog-text{
     	margin-right: auto;
     	margin-left: auto;
     	margin-top: 20px;

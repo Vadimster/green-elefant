@@ -4,6 +4,7 @@ var config = {
 	game: {
 		save: function(){
 			console.log('config.game.save() launched');
+			dialog.save();
 		},
 
 		load: function(){
@@ -13,7 +14,7 @@ var config = {
 	},
 
 	inventory: {
-		box: [hand, fork],
+		box: [hand, fork], //inventory container
 		activeItemIndex: 2, //array index of currently active item. Zero at game start
 
 		draw: function(){
@@ -149,14 +150,19 @@ var config = {
 					}
 				} //end of FOR	
 			} //end of IF
-		} //end of DRAW()
+		}, //end of DRAW()
+
+		craft: function(){
+			dialog.craft();
+		} //end of CRAFT()
+
 	},  // end of inventory
 
 	scene: {
-		room: null, //requird to keep reference to current object, used in flip() 
+		room: null, //required to keep reference to current object, used in flip() 
 		roomName: null, //required for quests and item interaction
-		viewName: null, //required for quests and item interaction
-		currentIndex: null, //index of a view which has been drawn (currently on screen). This is needed to switch left/right between views of the room to denote a starting point
+		viewName: null, //a different camera position in a room - required for quests and item interaction
+		currentIndex: null, //index of a view which has been drawn (currently on screen). This is needed to switch left/right between views of the room or to denote a starting point.
 
 		update: function(room, viewIndex){ // Passed by eventhandlers which are linked to divs in the init pahse of the game. which room to draw and which view of that room to draw. Ecah room contains array with views.
 			console.log('config.scene.update() launched');
@@ -178,13 +184,6 @@ var config = {
 				div.removeClass('spinner').addClass('view');
 				div.css('background-image', 'url('+background.src+')');
 			});
-
-	/*
-			$(background).load(function(){
-				div.removeClass('spinner').addClass('view');
-				div.css('background-image', 'url('+background.src+')');
-			});
-*/
 
 			this.room.views[this.currentIndex].draw(); //add interactive elements to background
 		},
@@ -214,7 +213,7 @@ var config = {
 			}
 		},
 
-		drawButtons: function(){
+		drawButtons: function(){ //manage flip view to right/left buttons (e.g. enable/disable buttons of there is only one view in a room)
 
 
 
@@ -225,23 +224,23 @@ var config = {
 };
 
 
-$(document).keydown(function(e) {
-  	if(e.keyCode == 37) { // left
-  		console.log('left key pressed');
-		config.inventory.activeItemIndex--;
-  		config.inventory.draw();
-	} else if(e.keyCode == 39) { // right
-  		console.log('right key pressed');
-  		config.inventory.activeItemIndex++;
-  		config.inventory.draw();
-  	}
-});	
-
-
 $(document).ready(function(){
-	console.log('self invoke');
+	console.log('self invoke on document ready');
 	config.inventory.draw();
 	config.scene.update(room1, 0);
+
+	$(document).keydown(function(e) {
+	  	if(e.keyCode == 37) { // left
+	  		console.log('left key pressed');
+			config.inventory.activeItemIndex--;
+	  		config.inventory.draw();
+		} else if(e.keyCode == 39) { // right
+	  		console.log('right key pressed');
+	  		config.inventory.activeItemIndex++;
+	  		config.inventory.draw();
+	  	}
+	});	
+
  });
 
 

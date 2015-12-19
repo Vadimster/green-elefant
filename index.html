@@ -10,6 +10,8 @@
 <BODY>
 <!-- sounds -->
 
+
+
 <!-- interface -->
 	<section class="header">
 		<div class="left-flip" onclick="config.scene.flip('left')"><</div>
@@ -23,20 +25,23 @@
 			<div id="inventory"></div>
 			<div id="item-name"></div>
 		</div>
-		<div id="button-craft" class="button">Запилить</div>
+		<div id="button-craft" class="button" onclick="config.inventory.craft()">Запилить</div>
 
 
 	</section>
 
-<!-- hidden elements -->
 
+
+
+<!-- hidden elements -->
 <div id="item-info-dialog">
-	<div id="item-info-dialog-bg">
-		<div id="item-info-dialog-picture"></div>
-		<div id="item-info-dialog-title" class="title"><h1></h1></div>
-		<div id="item-info-dialog-text" class="text"><p></p></div>
+	<div class="dialog-bg">
+		<div class="dialog-picture"></div>
+		<div class="dialog-title title"><h1></h1></div>
+		<div class="dialog-text text"><p></p></div>
 	</div>
 </div>
+
 
 <div id="view-1-a"></div>	 <!-- Description of the view --> 
 <div id="view-1-b"></div>	 <!-- Description of the view --> 
@@ -45,6 +50,7 @@
 <!-- scripts -->
 	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="ui/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/quests.js"></script>
 	<script type="text/javascript" src="js/locations.js"></script>
 	<script type="text/javascript" src="js/dialogs.js"></script>	
 	<script type="text/javascript" src="js/items.js"></script>
