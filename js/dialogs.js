@@ -13,12 +13,7 @@ var dialog  = {
 		$('.dialog-text').html(item.description);
 		$('#item-info-dialog')
 			.dialog(
-					{buttons: 
-		 				{
-		 			 	'закрыть':function(){
-		    			$(this).dialog('close');
-		       			},
-					},
+				{ 
 				draggable: false,
 				resizable: false,
 				modal: true,
@@ -26,9 +21,11 @@ var dialog  = {
 				height: 550,
 				closeOnEscape: true,
 				dialogClass: "no-close",
-				position: { my: "center center", at: "center", of: "#scene" }
+				position: { my: "center center", at: "center", of: "#scene", within: "#scene"} //
 				}
 			); //creates the dialog
+		//$('.ui-dialog-titlebar-close').blur();
+
 		}, //method ends
 
 	save: function(){
@@ -88,9 +85,7 @@ var dialog  = {
 				position: { my: "center center", at: "center", of: "#scene" }
 				}
 			); //creates the dialog
-
 	} //method ends
-
 };
 
 

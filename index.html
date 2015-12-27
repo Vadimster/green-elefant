@@ -13,14 +13,12 @@
 
 
 <!-- interface -->
-
-
 <div class="wrapperTable">
 	<div class="wrapperCell">
 		<section class="content">
-			<div class="flipper"> << </div>
+			<div class="flipper" onclick="config.scene.flip('left')"> << </div>
 			<div id="scene"></div>
-			<div class="flipper"> >> </div>
+			<div class="flipper" onclick="config.scene.flip('right')"> >> </div>
 			<div id="wrapperInventory">
 				<div id="inventory"></div>
 				<div id="inventory-item-name"></div>
@@ -29,23 +27,6 @@
 		</section>	
 	</div>
 </div>
-
-
-
-
-
-
-<!--
-	<section id="controls">	
-		<div id="button-save" class="button" onclick="config.game.save()">Сохранить</div>
-		<div class="inventory-wrapper">
-		</div>
-		<div id="button-craft" class="button" onclick="config.inventory.craft()">Запилить</div>
-
-
-	</section>
-
--->
 
 
 <!-- hidden elements -->

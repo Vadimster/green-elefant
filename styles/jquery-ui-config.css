@@ -1,9 +1,15 @@
 
 
-.no-close .ui-dialog-titlebar-close { /* hides close button in Jquery UI dialogues  */
-  display: none;
-}
+.ui-dialog  .ui-dialog-titlebar-close { /* close button in Jquery UI dialogues  */ 
+  margin-top: 25px;
+  margin-right: 5px;
+  z-index: 100;
+  /* background-image: url(../img/dialogs/close.png); */
+} 
 
+.ui-dialog-titlebar-close:focus { /* removes highlight from the button when in focus  */ 
+  outline: none;
+} 
 
 .ui-widget-header {
   border: none !important;

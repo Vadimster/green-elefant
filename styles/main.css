@@ -3,6 +3,18 @@ body{
 	background-color: black;
 }
 
+.title{
+	color: black;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.text{
+	color: black;
+	font-size: 0.7em;
+	text-align: left;
+}
+
 .wrapperTable{
 	display: table;
     height: 100vh;
@@ -41,10 +53,42 @@ body{
 		width: 1095px;
 		height: 100%;
 		border: 1px dotted red;
-		background-image: url(../img/inventory/item-info-bg.png);
 		background-repeat: no-repeat;
 		background-size: 100%;
 	}
+
+		.spinner{
+			margin-top: 320px;
+			margin-left: auto;
+			margin-right: auto;
+			height: 15px;
+			width: 85px;
+		}
+
+		.view{ 
+			position: absolute;
+			width: 1095px;
+			height: 650px;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+
+			.questElement{ 
+				position: absolute;
+				height: 100px;
+				width: 100px;
+				border: 1px dotted red;
+			}
+				.questElement:hover{
+					background-color: red;
+					opacity: 0.1;
+				}
+
+
+
+
+/* ----------- ITEMS & INVENTORY  ---------------------------*/
+
 
 	#wrapperInventory{
 		position: absolute;
@@ -103,135 +147,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-/*
-
-
-.questElement{ 
-	position: absolute;
-	height: 100px;
-	width: 100px;
-	border: 1px dotted red;
-}
-	.questElement:hover{
-		background-color: red;
-		opacity: 0.1;
-	}
-
-
-
-.spinner{
-	margin-top: 220px;
-	margin-left: auto;
-	margin-right: auto;
-	height: 15px;
-	width: 85px;
-}
-
-.title{
-	color: black;
-	font-weight: bold;
-	font-size: 1em;
-}
-
-.text{
-	color: black;
-	font-size: 0.7em;
-	text-align: left;
-	
-}
-
-.button{
-	width: 75px;
-	height: 75px;
-	line-height: 75px;
-	margin-top: 10px;
-	text-align: center;
-	vertical-align: top;
-	display: inline-block;
-	border: 1px solid green;
-	border-radius: 5px;
-	cursor: pointer;
-
-}
-
-	.button:hover{
-		color: red;
-	}
-
-
-
-.view{ 
-	position: absolute;
-	width: 1150px;
-	height: 530px;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-}
-
-
-
-.header{
-		position: relative;
-		border: 1px dashed blue;
-		width: 1200px;
-		margin-right: auto;
-		margin-left: auto;
-}
-
-
-.left-flip{
-	width: 10px;
-	height: 20px;
-	background-color: gray;
-	position: absolute;
-	top: 240px;
-	left: 0px;
-	padding: 5px;
-	cursor: pointer;
-}
-
-.right-flip{
-	width: 10px;
-	height: 20px;
-	background-color: gray;
-	position: absolute;
-	top: 240px;
-	right: 0px;
-	padding: 5px;
-	cursor: pointer;
-}
-
-
-	#scene {
-		position: relative;
-		width: 1150px;
-		height: 530px;
-		margin-right: auto;
-		margin-left: auto;
-		border: 1px dashed red;
-	}
-
-
-
-#controls{
-	width: 600px;
-	margin-top: 10px; 
-	margin-right: auto;
-	margin-left: auto;
-	border: 1px dashed blue;
-
-}
-
-
-
-
 #item-info-dialog{
 	display: none;
     width: 610px;
@@ -283,12 +198,6 @@ body{
     	border: 1px dotted transparent;
 
     }
-
-
-
-*/
-
-
 
 
 
