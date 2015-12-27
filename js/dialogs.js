@@ -24,7 +24,6 @@ var dialog  = {
 				position: { my: "center center", at: "center", of: "#scene", within: "#scene"} //
 				}
 			); //creates the dialog
-		//$('.ui-dialog-titlebar-close').blur();
 
 		}, //method ends
 
