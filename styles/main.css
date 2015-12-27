@@ -1,9 +1,119 @@
 body{
 	min-width: 1205px;
+	background-color: black;
+}
+
+.wrapperTable{
+	display: table;
+    height: 100vh;
+    width: 100%;
+    border: 1px dotted green;
+}
+
+.wrapperCell{
+	vertical-align: middle;
+    display: table-cell;
+    border: 1px dotted blue;
+}
+
+.content{
+	position: relative;
+	margin: 0 auto;  
+    height: 650px;
+    width: 1200px;
+    max-width:100%;
+    border: 1px dotted yellow;
 
 }
 
-.questElement{ /* for testing, review later on */
+	.flipper{ /*div for button to flip views left/right */
+		float: left;
+		margin-top: 270px;
+		color: white;
+		width: 40px;
+		height: 50px;
+		border: 1px dotted blue;
+	}
+
+	#scene{
+		position: relative;
+		float: left;
+		width: 1095px;
+		height: 100%;
+		border: 1px dotted red;
+		background-image: url(../img/inventory/item-info-bg.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+
+	#wrapperInventory{
+		position: absolute;
+		height: 100px;
+		left: 50%;
+		margin-left: -170px; /* half of the width! */
+		bottom: 0px;
+		border: 1px dotted green;
+	}
+
+		#inventory{
+			/* border: 1px dotted red; */
+		}
+
+		#inventory-item-name{
+			margin: auto;
+			color: grey;
+			font-size: 0.9em;
+			padding-top: 1px;
+			text-align: center;
+			/* border: 1px dotted blue; */
+		}
+
+		.item-inv-empty{
+			width: 55px;
+			height: 60px;
+			border: 1px dotted grey;
+			border-radius: 5px;
+			display: inline-block;
+			margin-right: 5px;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;	
+			background-position: center;
+			cursor: pointer;
+		}
+			.item-inv-empty:last-child{
+				margin-right: 0px;
+			}
+
+		.item-inv-active{
+			width: 80px;
+			height: 75px;
+			border: 2px solid grey;
+			border-radius: 5px;
+			display: inline-block;
+			margin-right: 5px;
+			background-position: center;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			background: rgba(255,0,0,0.1);
+			background-size: contain;
+			cursor: pointer;
+
+		}
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+.questElement{ 
 	position: absolute;
 	height: 100px;
 	width: 100px;
@@ -40,7 +150,7 @@ body{
 .button{
 	width: 75px;
 	height: 75px;
-	line-height: 75px; /* centers text in a div (must be one line only) */
+	line-height: 75px;
 	margin-top: 10px;
 	text-align: center;
 	vertical-align: top;
@@ -55,39 +165,9 @@ body{
 		color: red;
 	}
 
-.item-inv-empty{
-	width: 75px;
-	height: 75px;
-	border: 1px solid black;
-	border-radius: 5px;
-	display: inline-block;
-	margin-right: 5px;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;	
-	background-position: center;
-	cursor: pointer;
-}
-	.item-inv-empty:last-child{
-		margin-right: 0px;
-	}
 
-.item-inv-active{
-	width: 90px;
-	height: 90px;
-	border: 3px solid black;
-	border-radius: 5px;
-	display: inline-block;
-	margin-right: 5px;
-	background-position: center;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	background: rgba(255,0,0,0.1);
-	background-size: contain;
-	cursor: pointer;
 
-}
-
-.view{ /* styles background picture for all views */
+.view{ 
 	position: absolute;
 	width: 1150px;
 	height: 530px;
@@ -142,7 +222,6 @@ body{
 
 #controls{
 	width: 600px;
-	/* height: 100px; */
 	margin-top: 10px; 
 	margin-right: auto;
 	margin-left: auto;
@@ -151,31 +230,7 @@ body{
 }
 
 
-	.inventory-wrapper{
-		/* width: 430px; */
-		height: 140px;
-		border: 1px dotted green;
-		display: inline-block;
-	}
 
-
-		#inventory{
-			/* width: 425px; */
-			height: 100px;
-			/* margin-top: 10px; */
-			border: 1px solid green;
-			border-radius: 5px;
-		}
-
-		#item-name{
-			margin: auto;
-			padding-top: 1px;
-			text-align: center;
-			border: 1px dotted yellow;
-
-		}
-
-/*  --------------------------------------------------  */
 
 #item-info-dialog{
 	display: none;
@@ -206,7 +261,6 @@ body{
     	margin-top: 20px;
    		border: 1px solid gray;
    		border-radius: 5%;
-		/* background: rgba(108, 187, 60, 0.2); */
    		background-position: center;
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
@@ -231,8 +285,8 @@ body{
     }
 
 
-/* ------------------------------------------------ */
 
+*/
 
 
 

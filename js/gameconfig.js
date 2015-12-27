@@ -20,7 +20,7 @@ var config = {
 		draw: function(){
 			console.log('config.inventory.draw() launched');
 			$('#inventory').empty();
-			$('#item-name').empty();
+			$('#inventory-item-name').empty();
 			for (i = 0; i< this.box.length; i++){ //ensure all elements are set to inactive
 				this.box[i].equipped = false;
 			}	
@@ -123,7 +123,7 @@ var config = {
 
 				activeItem.div.appendTo('#inventory');
 				this.box[this.activeItemIndex].equipped = true;
-				$('#item-name').html(this.box[this.activeItemIndex].name);
+				$('#inventory-item-name').html(this.box[this.activeItemIndex].name);
 
 				var counter = 1; //TO DO  -  DEACTIVATE ALL THESE 2 ITEMS!
 				for(i=0; i < 2; i++){

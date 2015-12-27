@@ -13,24 +13,39 @@
 
 
 <!-- interface -->
-	<section class="header">
-		<div class="left-flip" onclick="config.scene.flip('left')"><</div>
-		<div class="right-flip" onclick="config.scene.flip('right')">></div>
-		<div id="scene"></div>
-	</section>
-	
+
+
+<div class="wrapperTable">
+	<div class="wrapperCell">
+		<section class="content">
+			<div class="flipper"> << </div>
+			<div id="scene"></div>
+			<div class="flipper"> >> </div>
+			<div id="wrapperInventory">
+				<div id="inventory"></div>
+				<div id="inventory-item-name"></div>
+			</div>
+			<!--<br style="clear: left;" /> -->
+		</section>	
+	</div>
+</div>
+
+
+
+
+
+
+<!--
 	<section id="controls">	
 		<div id="button-save" class="button" onclick="config.game.save()">Сохранить</div>
 		<div class="inventory-wrapper">
-			<div id="inventory"></div>
-			<div id="item-name"></div>
 		</div>
 		<div id="button-craft" class="button" onclick="config.inventory.craft()">Запилить</div>
 
 
 	</section>
 
-
+-->
 
 
 <!-- hidden elements -->
