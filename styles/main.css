@@ -3,6 +3,84 @@ body{
 	background-color: black;
 }
 
+/* ////////////// LANDING PAGE /////////////// */
+
+.start-header{
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font-family: "Impact", serif;
+	font-size: 1.8em;
+	text-align: center; 
+    max-width:100%;
+    border: 1px dotted yellow;
+}
+
+#stats-wrapper{
+	position: absolute;
+	top: 60px;
+	height: 50px;
+	border: 1px dotted black;
+	margin: auto;
+	background-color: grey;
+	border: 1px dotted blue;
+}
+
+	.stats-container{
+		float: left;
+		height: 48px;
+		width: 150px;
+		border: 1px dotted red;
+	}
+
+			.stats-button-str, .stats-button-cha{
+				height: 48px;
+				width: 30px;
+				float: left;
+				border: 1px dotted blue;
+				text-align: center;
+				background-color: white;
+			}
+
+			.stats-cha-point{
+				float: left;
+				height: 48px;
+				width:25px;
+				background-color: green;
+				border-radius: 5px;
+				margin-right: 2px;
+				margin-left: 2px;
+			}
+
+			.stats-str-point{
+				float:right;
+				height: 48px;
+				width:25px;
+				background-color: red;
+				border-radius: 5px;
+				margin-right: 2px;
+				margin-left: 2px;
+			}
+
+
+
+			#stats-cha-container{
+				margin-left: 20px;
+			}
+
+.start-game{
+	position: absolute;
+	top: 150px;
+	width: 100px;
+	height: 50px;
+	color: white;
+	background-color: red;
+	border: 1px dotted red;
+}
+
+/* ////////////// GAME /////////////// */
+
 .title{
 	color: black;
 	font-weight: bold;
@@ -31,26 +109,28 @@ body{
 .content{
 	position: relative;
 	margin: 0 auto;  
-    height: 650px;
-    width: 1200px;
+    height: 700px;
+    width: 1186px;
     max-width:100%;
     border: 1px dotted yellow;
 
 }
 
-	.flipper{ /*div for button to flip views left/right */
+	.flipper-left, .flipper-right{ /*div for button to flip views left/right */
 		float: left;
 		margin-top: 270px;
 		color: white;
 		width: 40px;
 		height: 50px;
 		border: 1px dotted blue;
+		cursor: pointer;
+
 	}
 
 	#scene{
 		position: relative;
 		float: left;
-		width: 1095px;
+		width: 1100px;
 		height: 100%;
 		border: 1px dotted red;
 		background-repeat: no-repeat;
@@ -67,8 +147,8 @@ body{
 
 		.view{ 
 			position: absolute;
-			width: 1095px;
-			height: 650px;
+			width: 1100px;
+			height: 700px;
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 		}
@@ -96,7 +176,7 @@ body{
 		left: 50%;
 		margin-left: -170px; /* half of the width! */
 		bottom: 0px;
-		border: 1px dotted green;
+		/* border: 1px dotted green; */
 	}
 
 		#inventory{
@@ -129,7 +209,7 @@ body{
 			}
 
 		.item-inv-active{
-			width: 80px;
+			width: 75px;
 			height: 75px;
 			border: 2px solid grey;
 			border-radius: 5px;
@@ -140,7 +220,6 @@ body{
 			background-repeat: no-repeat;
 			background-position: center;
 			background: rgba(255,0,0,0.1);
-			background-size: contain;
 			cursor: pointer;
 
 		}

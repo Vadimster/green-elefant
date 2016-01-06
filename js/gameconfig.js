@@ -1,7 +1,48 @@
 
 var config = {
 
-	game: {
+	game: {		
+		
+		player: {
+			username: null,
+			clicksCounter: 0, //counts clicks the user made in the document.
+			pointsLimit: 5, //number of points a player can have combined for all skills. Must be odd!
+			strength: 3,
+			charisma: 2,
+		},
+
+		started: false, //clicks are captures only if game is started
+		
+
+		init: function(){
+			$('body').empty();
+			$('body').append('<div class="wrapperTable"></div>');
+				$('.wrapperTable').append('<div class="wrapperCell"></div>');
+					$('.wrapperCell').append('<section class="content"></section>');
+						$('.content').append('<div class="flipper-left"> << </div>');
+							$('.flipper-left').click(function() {
+								config.scene.flip('left');
+								});
+						$('.content').append('<div id="scene"></div>');
+						$('.content').append('<div class="flipper-right"> >> </div>');
+							$('.flipper-right').click(function() {
+								config.scene.flip('right');
+								});							
+						$('.content').append('<div id="wrapperInventory"></div>');
+							$('#wrapperInventory').append('<div id="inventory"></div>');
+							$('#wrapperInventory').append('<div id="inventory-item-name"></div>');
+			
+			$('body').append('<div id="item-info-dialog">'); //Hidden dialog
+				$('#item-info-dialog').append('<div class="dialog-bg"></div>');
+					$('.dialog-bg').append('<div class="dialog-picture"></div>');
+					$('.dialog-bg').append('<div class="dialog-title title"><h1></h1></div>');
+					$('.dialog-bg').append('<div class="dialog-text text"><p></p></div>');
+
+			config.inventory.draw();
+			config.scene.update(room1, 0);
+			this.started = true;
+		},
+
 		save: function(){
 			console.log('config.game.save() launched');
 			dialog.save();
@@ -10,8 +51,8 @@ var config = {
 		load: function(){
 			console.log('config.game.load() launched');
 		}
-
 	},
+
 
 	inventory: {
 		box: [hand, fork], //inventory container
@@ -223,11 +264,59 @@ var config = {
 
 };
 
+var statsSelector = {
+
+	showStats: function(){
+		console.log('Strength: ' + config.game.player.strength);
+		console.log('Charisma: ' + config.game.player.charisma);
+	},
+
+	draw: function(){
+		$('.stats-container').empty();
+
+		for(i=0; i < config.game.player.charisma; i++){
+			var point = $('<div class="stats-cha-point">');
+			point.appendTo('#stats-cha-container');
+
+		}
+
+		for(i=0; i < config.game.player.strength; i++){
+			var point = $('<div class="stats-str-point">');
+			point.appendTo('#stats-str-container');
+
+		}
+
+		this.showStats();
+
+	},
+
+	addCharisma: function(){
+		console.log('addCharisma() launched');
+		if(config.game.player.charisma===config.game.player.pointsLimit){
+			console.log('max charisma reached ' + config.game.player.charisma);
+
+		} else {
+			config.game.player.charisma++;
+			config.game.player.strength--;
+			this.draw();
+		}
+	},
+
+	addStrength: function(){
+		console.log('addStrength() launched');
+		if(config.game.player.strength===config.game.player.pointsLimit){
+			console.log('max strength reached ' + config.game.player.strength);
+		} else {
+			config.game.player.strength++;
+			config.game.player.charisma--;
+			this.draw();
+		}
+	}
+};
 
 $(document).ready(function(){
 	console.log('self invoke on document ready');
-	config.inventory.draw();
-	config.scene.update(room1, 0);
+	statsSelector.draw();
 
 	$(document).keydown(function(e) {
 	  	if(e.keyCode == 37) { // left
@@ -240,6 +329,27 @@ $(document).ready(function(){
 	  		config.inventory.draw();
 	  	}
 	});	
+
+	$(document).click(function() {
+		if(config.game.started){
+			config.game.player.clicksCounter++;
+			//TO DO: send clicks to the server under current username.
+			console.log(config.game.player.clicksCounter);			
+		} else {
+			console.log('Game not started');			
+		}
+	});
+
+	$('.stats-button-str').click(function() {
+		statsSelector.addStrength();
+	});
+	$('.stats-button-cha').click(function() {
+		statsSelector.addCharisma();
+	});	
+	$('.start-game').click(function() {
+		config.game.init();
+	});	
+
 
  });
 
