@@ -340,6 +340,18 @@ $(document).ready(function(){
 		}
 	});
 
+	$('#username').focusout(function(){
+		var username = $('#username').val();
+		if(username.length > 0){
+		config.game.player.username = $('#username').val();
+		console.log(config.game.player.username);
+		} else {
+		console.log('username is empty');
+		console.log(config.game.player.username);
+		}
+
+	});
+
 	$('.stats-button-str').click(function() {
 		statsSelector.addStrength();
 	});

@@ -1,9 +1,26 @@
-body{
-	min-width: 1205px;
+html, body{
+/* min-width: 1205px; */
+	/* width: 100%; */
 	background-color: black;
+	/* overflow-y:hidden; */
 }
 
+
+
+
 /* ////////////// LANDING PAGE /////////////// */
+table{
+	border: 1px dotted yellow;
+	color: white;
+	margin: 0 auto;
+	top: 10px;
+	padding: 5px;
+}
+
+td{
+	padding: 5px;
+
+}
 
 .start-header{
 	margin-top: 10px;
@@ -17,9 +34,41 @@ body{
     border: 1px dotted yellow;
 }
 
+.start-character{
+	position: relative;
+	height: 200px;
+	width: 400px;
+	border: 1px dotted yellow;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 25px;
+}
+
+.start-username{
+	position: absolute;
+	width: 250px;
+	right: 50%;
+	margin-right: -125px;
+	/* border: 1px dotted green; &*/
+
+}
+
+	#username{
+		width: 250px;
+		height: 30px;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 1.2em;
+		
+
+
+	}
+
+
 #stats-wrapper{
 	position: absolute;
-	top: 60px;
+	top: 50px;
 	height: 50px;
 	border: 1px dotted black;
 	margin: auto;
@@ -41,6 +90,7 @@ body{
 				border: 1px dotted blue;
 				text-align: center;
 				background-color: white;
+
 			}
 
 			.stats-cha-point{
@@ -72,12 +122,19 @@ body{
 .start-game{
 	position: absolute;
 	top: 150px;
-	width: 100px;
+	width: 150px;
 	height: 50px;
+	line-height: 50px;
 	color: white;
 	background-color: red;
 	border: 1px dotted red;
+	right: 50%;
+	margin-right: -75px;
+	border-radius: 10px;
+	text-align: center;
 }
+
+
 
 /* ////////////// GAME /////////////// */
 
@@ -109,7 +166,7 @@ body{
 .content{
 	position: relative;
 	margin: 0 auto;  
-    height: 700px;
+    height: 650px;
     width: 1186px;
     max-width:100%;
     border: 1px dotted yellow;
@@ -148,7 +205,7 @@ body{
 		.view{ 
 			position: absolute;
 			width: 1100px;
-			height: 700px;
+			height: 650px;
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 		}

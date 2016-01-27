@@ -8,7 +8,7 @@
 var view1a = { //start view on gaupvahta
 	name: 'Start view',
 	domID: '#view-1-a',
-	background: 'img/locations/room1/b1.jpg', //background URL image to be loaded into the scene
+	background: 'img/locations/room1/b1.jpeg', //background URL image to be loaded into the scene
 	draw: function(){ 
 		console.log('drawing interactive elements on view: ' + this.name);
 
