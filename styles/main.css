@@ -173,16 +173,37 @@ td{
 
 }
 
-	.flipper-left, .flipper-right{ /*div for button to flip views left/right */
+	.flipper{ /*div for button to flip views left/right */
 		float: left;
-		margin-top: 270px;
+		margin-top: 290px;
 		color: white;
 		width: 40px;
 		height: 50px;
-		border: 1px dotted blue;
+		/* border: 1px dotted blue; */
 		cursor: pointer;
 
 	}
+
+	.flipper-right{
+		background: url(../img/buttons/flip-right.png) 0 0 no-repeat;
+	}
+
+	.flipper-right:hover{
+		background: url(../img/buttons/flip-right.png) 0 0 no-repeat;
+		background-position: -57px 0px;
+
+	}
+
+	.flipper-left{
+		background: url(../img/buttons/flip-left.png) 0 0 no-repeat;
+		background-position: -65px 0px;
+	}
+
+	.flipper-left:hover{
+		background: url(../img/buttons/flip-left.png) 0 0 no-repeat;
+		background-position: -8px 0px;
+	}
+
 
 	#scene{
 		position: relative;
@@ -231,13 +252,46 @@ td{
 		position: absolute;
 		height: 100px;
 		left: 50%;
-		margin-left: -170px; /* half of the width! */
+		margin-left: -170px; /* half of the width which depends on the content! */
 		bottom: 0px;
-		/* border: 1px dotted green; */
+		border: 1px dotted green; 
 	}
 
+
+		.inventory-flipper{
+			height: 30px;
+			width:  30px;
+			border: 1px dotted blue;
+			margin-top: 30px;
+			float: left;
+			cursor: pointer;
+
+		}
+
+			.inventory-flipper-right{
+
+
+			}
+
+				.inventory-flipper-right:hover{
+
+
+				}			
+
+			.inventory-flipper-left{
+
+
+			}
+
+				.inventory-flipper-left:hover{
+
+
+				}
+
+
 		#inventory{
-			/* border: 1px dotted red; */
+			float:left;
+			border: 1px dotted red; 
 		}
 
 		#inventory-item-name{
@@ -246,6 +300,7 @@ td{
 			font-size: 0.9em;
 			padding-top: 1px;
 			text-align: center;
+			clear: both;
 			/* border: 1px dotted blue; */
 		}
 

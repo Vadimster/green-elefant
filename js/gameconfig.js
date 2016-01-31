@@ -19,18 +19,28 @@ var config = {
 			$('body').append('<div class="wrapperTable"></div>');
 				$('.wrapperTable').append('<div class="wrapperCell"></div>');
 					$('.wrapperCell').append('<section class="content"></section>');
-						$('.content').append('<div class="flipper-left"> << </div>');
+						$('.content').append('<div class="flipper flipper-left"></div>');
 							$('.flipper-left').click(function() {
 								config.scene.flip('left');
 								});
 						$('.content').append('<div id="scene"></div>');
-						$('.content').append('<div class="flipper-right"> >> </div>');
+						$('.content').append('<div class="flipper flipper-right"></div>');
 							$('.flipper-right').click(function() {
 								config.scene.flip('right');
 								});							
 						$('.content').append('<div id="wrapperInventory"></div>');
+							$('#wrapperInventory').append('<div class="inventory-flipper inventory-flipper-left" title="Крутить инвентарь влево можно и стрелкой на клавиатуре."> << </div>');
+								$('.inventory-flipper-left').click(function() {
+									config.inventory.flip('left');
+									});
 							$('#wrapperInventory').append('<div id="inventory"></div>');
+							$('#wrapperInventory').append('<div class="inventory-flipper inventory-flipper-right" title="Крутить инвентарь вправо можно и стрелкой на клавиатуре."> >> </div>');
+								$('.inventory-flipper-right').click(function() {
+									config.inventory.flip('right');
+									});							
 							$('#wrapperInventory').append('<div id="inventory-item-name"></div>');
+
+
 			
 			$('body').append('<div id="item-info-dialog">'); //Hidden dialog
 				$('#item-info-dialog').append('<div class="dialog-bg"></div>');
@@ -193,6 +203,16 @@ var config = {
 			} //end of IF
 		}, //end of DRAW()
 
+		flip: function(direction){
+			if(direction === 'right'){
+		  		config.inventory.activeItemIndex++;
+		  		config.inventory.draw();
+			} else {
+				config.inventory.activeItemIndex--;
+		  		config.inventory.draw();
+			}
+		},
+
 		craft: function(){
 			dialog.craft();
 		} //end of CRAFT()
@@ -321,12 +341,10 @@ $(document).ready(function(){
 	$(document).keydown(function(e) {
 	  	if(e.keyCode == 37) { // left
 	  		console.log('left key pressed');
-			config.inventory.activeItemIndex--;
-	  		config.inventory.draw();
+	  		config.inventory.flip('left');
 		} else if(e.keyCode == 39) { // right
 	  		console.log('right key pressed');
-	  		config.inventory.activeItemIndex++;
-	  		config.inventory.draw();
+	  		config.inventory.flip('right');
 	  	}
 	});	
 
